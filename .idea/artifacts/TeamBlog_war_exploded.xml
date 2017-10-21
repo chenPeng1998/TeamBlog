@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TeamBlog:war exploded">
+    <output-path>$PROJECT_DIR$/target/TeamBlog</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TeamBlog" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/TeamBlog/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="TeamBlog/web/Web" />
+    </root>
+  </artifact>
+</component>
