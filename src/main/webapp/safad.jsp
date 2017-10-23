@@ -8,26 +8,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%
-    Map<String,String> map=new HashMap<String ,String>();
-    map.put("1","dzh");
-    map.put("2","ctp");
-    map.put("3","lcz");
-    request.setAttribute("map",map);
-%>
+
 <head>
     <title>Title</title>
 </head>
 <body>
-<%=request.getAttribute("map")%>
 <%
-    HashMap<String,String> var=(HashMap<String, String>) request.getAttribute("map");
-
-    out.println("通过Map.entrySet遍历key和value");
-    for (Map.Entry<String, String> entry : var.entrySet()) {
-        out.println("key= " + entry.getKey() + " and value= "
-                + entry.getValue()+"<br/>");
-    }
+    HttpSession reque= request.getSession();
+     out.println(reque.getAttribute("student"));
+     if(reque.getAttribute("student")!=null){
+         out.println("登陆成功 欢迎");
+     }else {
+         out.println("没有登陆 ");
+         response.sendRedirect("lo.jsp");
+     }
 %>
 </body>
 </html>

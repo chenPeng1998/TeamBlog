@@ -13,7 +13,7 @@
     </typeAliases>-->
     <!--之定义别名 -->
     <typeAliases>
-    <package name="pojo"/>
+    <package name="pojoc"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -33,6 +33,5 @@
     <!--MAPPING 文件路径配置-->
     <mappers>
         <mapper resource="Mapper.xml"/>
-        <mapper resource="map.xml" />
     </mappers>
 </configuration>

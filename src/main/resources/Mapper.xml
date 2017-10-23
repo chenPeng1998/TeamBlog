@@ -3,4 +3,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="map.Mapper">
     <!--配置一个resultMap 指定返回的类型 -->
+<select id="findInfo" resultType="student" parameterType="student">
+    SELECT  id,username,password  from student WHERE username=#{username} and password=#{password}
+</select>
+    <select id="checkUsername" resultType="student" parameterType="String">
+        SELECT  id from student WHERE username=#{username}
+    </select>
+    <insert id="regStudent"  parameterType="student" >
+        INSERT INTO student (username, password) VALUES (#{username} , #{password})
+    </insert>
+    <insert id="addStuInfo" parameterType="student">
+        INSERT INTO student(username, password) VALUES (#{username},#{password})
+    </insert>
 </mapper>
