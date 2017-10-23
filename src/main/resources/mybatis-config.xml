@@ -33,5 +33,6 @@
     <!--MAPPING 文件路径配置-->
     <mappers>
         <mapper resource="Mapper.xml"/>
+        <mapper resource="map.xml" />
     </mappers>
 </configuration>
