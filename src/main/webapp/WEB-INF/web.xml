@@ -20,5 +20,39 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>check</servlet-name>
+    <servlet-class>serviceImp.CheckcodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>check</servlet-name>
+    <url-pattern>/check</url-pattern>
+  </servlet-mapping>
 
+  <servlet>
+    <servlet-name>comment</servlet-name>
+    <servlet-class>serviceImp.comment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>comment</servlet-name>
+    <url-pattern>/comment</url-pattern>
+  </servlet-mapping>
+
+<filter>
+  <filter-name>fite</filter-name>
+  <filter-class>CommentFilter</filter-class>
+  <init-param>
+    <param-name>illegal</param-name>
+    <param-value>猫</param-value>
+  </init-param>
+  <init-param>
+    <param-name>illegal2</param-name>
+    <param-value>鼻</param-value>
+  </init-param>
+</filter>
+  <filter-mapping>
+    <filter-name>fite</filter-name>
+    <servlet-name>comment</servlet-name>
+    <url-pattern>/fite</url-pattern>
+  </filter-mapping>
 </web-app>

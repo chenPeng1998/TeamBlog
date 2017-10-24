@@ -18,6 +18,8 @@
     <%=request.getAttribute("check")==null?"":
         request.getAttribute("check")%></span><br/>
     password:<input type="password" name="password"/><br/>
+    验 证  码:<input type="text" name="check" /><br/>
+    <img src="/check" onclick="this.src='/check?'+Math.random()"><br/>
     <button type="submit">login</button>
 </form>
 

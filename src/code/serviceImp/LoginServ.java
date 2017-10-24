@@ -15,20 +15,29 @@ public class LoginServ extends javax.servlet.http.HttpServlet {
         LoginService loginService=new LoginService();
         String username=request.getParameter("username");
         String password=request.getParameter("password");
+        String check=request.getParameter("check");
         Student student=new Student();
         student.setUsername(username);
         student.setPassword(password);
+        HttpSession session=request.getSession();
+        int num=(Integer)session.getAttribute("number");
+        System.out.println(num);
+        String n=num+"";
+        boolean b=(n.equals(check))?true:false;
+
+
 
         boolean key=loginService.login(student);
-        if(key){
+        if(key&&b){
             System.out.println("登陆成功");
-            HttpSession session=request.getSession();
+
             session.setAttribute("student",student);
             response.sendRedirect("safad.jsp");
 
-        }else {
+        }
+        else {
             System.out.println("登陆失败");
-            request.setAttribute("check","账号/密码错误!");
+            request.setAttribute("check","账号/密码/验证码错误!");
             request.getRequestDispatcher("lo.jsp").forward(request,response);
         }
     }
